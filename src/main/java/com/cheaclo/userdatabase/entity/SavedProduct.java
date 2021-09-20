@@ -25,5 +25,5 @@ public class SavedProduct {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    private int product;
+    private Long product;
 }
