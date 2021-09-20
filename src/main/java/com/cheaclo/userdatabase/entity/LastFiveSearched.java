@@ -11,20 +11,21 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User {
+public class LastFiveSearched {
     @Id
     @SequenceGenerator(
-            name = "user_seq",
-            sequenceName = "user_seq",
+            name = "last_five_searched_seq",
+            sequenceName = "last_five_searched_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_seq"
+            generator = "last_five_searched_seq"
     )
     private Long id;
-    private Date createDate;
+    private Date searchDate;
     @ManyToOne
-    @JoinColumn(name = "account_info_id")
-    private AccountInfo accountInfo;
+    @JoinColumn(name = "user_id")
+    private User user;
+    private String searchedPhrase;
 }
