@@ -11,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "cheaclo_user")
 public class User {
     @Id
     @SequenceGenerator(
