@@ -1,7 +1,7 @@
 package com.cheaclo.userdatabase.entity;
 
 import lombok.*;
-import model.Gender;
+import com.cheaclo.userdatabase.model.Gender;
 
 import javax.persistence.*;
 import java.util.Date;
