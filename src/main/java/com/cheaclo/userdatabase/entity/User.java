@@ -26,7 +26,7 @@ public class User {
     @Column(name = "user_id")
     private Long id;
     private Date createDate;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_info_id")
     private AccountInfo accountInfo;
 }

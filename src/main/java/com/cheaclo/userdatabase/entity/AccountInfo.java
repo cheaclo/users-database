@@ -31,7 +31,7 @@ public class AccountInfo {
     private Gender gender;
     private String phoneNumber;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
 }
