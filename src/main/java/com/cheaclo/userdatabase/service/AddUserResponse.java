@@ -11,6 +11,9 @@ public class AddUserResponse {
     @Value("${add.user.response.fail.country}")
     private String noCountryMessage;
 
+    @Value("${add.user.response.fail.duplicate}")
+    private String duplicateMessage;
+
     public boolean success;
     public String message;
 
@@ -23,6 +26,12 @@ public class AddUserResponse {
     public AddUserResponse success() {
         success = true;
         message = successMessage;
+        return this;
+    }
+
+    public AddUserResponse duplicate() {
+        success = false;
+        message = duplicateMessage;
         return this;
     }
 }

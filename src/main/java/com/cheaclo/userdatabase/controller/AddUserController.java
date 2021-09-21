@@ -32,6 +32,9 @@ public class AddUserController {
     public AddUserResponse saveProducts(@Valid @RequestBody AddUserRequestBody request) {
         if (!countryValidator.validateCountry(request.getCountry()))
             return addUserResponse.noCountry();
+        User checkDuplicate = userRepository.findFirstByAccountInfo_Email(request.getEmail());
+        if (checkDuplicate != null)
+            return addUserResponse.duplicate();
 
         User user = addUserParser.requestToEntity(request);
         userRepository.save(user);
