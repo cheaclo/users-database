@@ -19,7 +19,6 @@ public class Country {
             strategy = GenerationType.SEQUENCE,
             generator = "country_seq"
     )
-    @Column(name = "user_id")
     private Long id;
     private String name;
 }

@@ -22,6 +22,7 @@ public class User {
             strategy = GenerationType.SEQUENCE,
             generator = "user_seq"
     )
+    @Column(name = "user_id")
     private Long id;
     private Date createDate;
     @ManyToOne
