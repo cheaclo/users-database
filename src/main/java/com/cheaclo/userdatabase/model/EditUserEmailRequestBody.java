@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.Email;
 
 @Data
-public class EditUserRequestBody {
+public class EditUserEmailRequestBody {
     private Long userId;
     @Email
     private String email;

@@ -3,6 +3,7 @@ package com.cheaclo.userdatabase.controller;
 
 import com.cheaclo.userdatabase.entity.AccountInfo;
 import com.cheaclo.userdatabase.entity.User;
+import com.cheaclo.userdatabase.model.EditUserEmailRequestBody;
 import com.cheaclo.userdatabase.model.EditUserRequestBody;
 import com.cheaclo.userdatabase.repository.UserRepository;
 import com.cheaclo.userdatabase.service.EditUserResponse;
@@ -24,7 +25,7 @@ public class EditUserController {
     private UserRepository userRepository;
 
     @PostMapping("/email")
-    public EditUserResponse editUserEmail(@Valid @RequestBody EditUserRequestBody request) {
+    public EditUserResponse editUserEmail(@Valid @RequestBody EditUserEmailRequestBody request) {
         User user = userRepository.findFirstByIdAndAccountInfo_EmailIgnoreCase(request.getUserId(), request.getEmail());
         if (user == null)
             return editUserResponse.userNotFound();
@@ -34,6 +35,6 @@ public class EditUserController {
         user.setAccountInfo(accountInfo);
         userRepository.save(user);
 
-        return editUserResponse.success();
+        return editUserResponse.emailSuccess();
     }
 }
