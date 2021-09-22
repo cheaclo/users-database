@@ -28,7 +28,7 @@ public class AddUserController {
     private UserRepository userRepository;
 
     @PostMapping("/add")
-    public AddUserResponse saveProducts(@Valid @RequestBody AddUserRequestBody request) {
+    public AddUserResponse addUser(@Valid @RequestBody AddUserRequestBody request) {
         if (!countryValidator.validateCountry(request.getCountry()))
             return addUserResponse.noCountry();
         User checkDuplicate = userRepository.findFirstByAccountInfo_Email(request.getEmail());
