@@ -37,7 +37,7 @@ public class EditUserControllerHelper {
         if (request.getNewBirthday() != null)
             accountInfo.setBirthdayDate(request.getNewBirthday());
         if (request.getNewPhone() != null)
-            accountInfo.setPhoneNumber(request.getNewPhone());
+            accountInfo.setPhone(request.getNewPhone());
 
         Address address = accountInfo.getAddress();
 
