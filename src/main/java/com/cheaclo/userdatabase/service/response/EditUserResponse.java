@@ -14,6 +14,9 @@ public class EditUserResponse {
     @Value("${edit.user.response.country.fail}")
     private String countryNotFoundMessage;
 
+    @Value("${edit.user.response.json.fail}")
+    private String invalidJsonMessage;
+
     public boolean success;
     public String message;
 
@@ -32,6 +35,12 @@ public class EditUserResponse {
     public EditUserResponse countryNotFound() {
         success = false;
         message = countryNotFoundMessage;
+        return this;
+    }
+
+    public EditUserResponse invalidJson() {
+        success = false;
+        message = invalidJsonMessage;
         return this;
     }
 }
