@@ -1,4 +1,4 @@
-package com.cheaclo.userdatabase.service;
+package com.cheaclo.userdatabase.service.response;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

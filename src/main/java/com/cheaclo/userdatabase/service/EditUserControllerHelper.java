@@ -5,6 +5,7 @@ import com.cheaclo.userdatabase.entity.Address;
 import com.cheaclo.userdatabase.entity.User;
 import com.cheaclo.userdatabase.model.EditUserRequestBody;
 import com.cheaclo.userdatabase.repository.UserRepository;
+import com.cheaclo.userdatabase.service.response.EditUserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

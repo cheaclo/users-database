@@ -2,7 +2,7 @@ package com.cheaclo.userdatabase.controller;
 
 import com.cheaclo.userdatabase.model.EditUserRequestBody;
 import com.cheaclo.userdatabase.service.EditUserControllerHelper;
-import com.cheaclo.userdatabase.service.EditUserResponse;
+import com.cheaclo.userdatabase.service.response.EditUserResponse;
 
 import lombok.RequiredArgsConstructor;
 
