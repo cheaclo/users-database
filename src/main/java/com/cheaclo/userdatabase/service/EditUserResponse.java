@@ -5,14 +5,23 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EditUserResponse {
-    @Value("${edit.user.email.response.success}")
+    @Value("${edit.user.response.success}")
     private String successMessage;
 
-    @Value("${edit.user.email.response.fail}")
+    @Value("${edit.user.response.user.fail}")
     private String userNotFoundMessage;
+
+    @Value("${edit.user.response.country.fail}")
+    private String countryNotFoundMessage;
 
     public boolean success;
     public String message;
+
+    public EditUserResponse success() {
+        success = true;
+        message = successMessage;
+        return this;
+    }
 
     public EditUserResponse userNotFound() {
         success = false;
@@ -20,9 +29,9 @@ public class EditUserResponse {
         return this;
     }
 
-    public EditUserResponse success() {
-        success = true;
-        message = successMessage;
+    public EditUserResponse countryNotFound() {
+        success = false;
+        message = countryNotFoundMessage;
         return this;
     }
 }
