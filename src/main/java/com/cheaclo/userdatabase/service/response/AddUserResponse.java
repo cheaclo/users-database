@@ -17,7 +17,7 @@ public class AddUserResponse {
     public boolean success;
     public String message;
 
-    public AddUserResponse noCountry() {
+    public AddUserResponse invalidCountry() {
         success = false;
         message = noCountryMessage;
         return this;

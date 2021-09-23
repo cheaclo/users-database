@@ -8,6 +8,7 @@ import com.cheaclo.userdatabase.service.AddUserParser;
 import com.cheaclo.userdatabase.service.response.AddUserResponse;
 import com.cheaclo.userdatabase.service.CountryValidator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -22,16 +23,16 @@ public class AddUserController {
     private final UserRepository userRepository;
 
     @PostMapping("/add")
-    public AddUserResponse addUser(@Valid @RequestBody AddUserRequestBody request) {
+    public ResponseEntity<AddUserResponse> addUser(@Valid @RequestBody AddUserRequestBody request) {
         if (!countryValidator.validateCountry(request.getCountry()))
-            return addUserResponse.noCountry();
+            return ResponseEntity.badRequest().body(addUserResponse.invalidCountry());
         User checkDuplicate = userRepository.findFirstByAccountInfo_Email(request.getEmail());
         if (checkDuplicate != null)
-            return addUserResponse.duplicate();
+            return ResponseEntity.badRequest().body(addUserResponse.duplicate());
 
         User user = addUserParser.requestToEntity(request);
         userRepository.save(user);
 
-        return addUserResponse.success();
+        return ResponseEntity.ok(addUserResponse.success());
     }
 }
