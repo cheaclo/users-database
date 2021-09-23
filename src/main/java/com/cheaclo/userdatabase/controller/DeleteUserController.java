@@ -29,7 +29,7 @@ public class DeleteUserController {
     public ResponseEntity<DeleteUserResponse> deleteUser(@Valid @RequestBody DeleteUserRequestBody request) {
         User user = userRepository.findFirstByIdAndAccountInfo_EmailIgnoreCase(request.getUserId(), request.getEmail());
         if (user == null)
-            ResponseEntity.badRequest().body(deleteUserResponse.userNotFound());
+            return ResponseEntity.badRequest().body(deleteUserResponse.userNotFound());
 
         userRepository.delete(user);
 
