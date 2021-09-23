@@ -7,25 +7,19 @@ import com.cheaclo.userdatabase.repository.UserRepository;
 import com.cheaclo.userdatabase.service.AddUserParser;
 import com.cheaclo.userdatabase.service.AddUserResponse;
 import com.cheaclo.userdatabase.service.CountryValidator;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/user")
 public class AddUserController {
-    @Autowired
-    private AddUserResponse addUserResponse;
-
-    @Autowired
-    private CountryValidator countryValidator;
-
-    @Autowired
-    private AddUserParser addUserParser;
-
-    @Autowired
-    private UserRepository userRepository;
+    private final AddUserResponse addUserResponse;
+    private final CountryValidator countryValidator;
+    private final AddUserParser addUserParser;
+    private final UserRepository userRepository;
 
     @PostMapping("/add")
     public AddUserResponse addUser(@Valid @RequestBody AddUserRequestBody request) {
