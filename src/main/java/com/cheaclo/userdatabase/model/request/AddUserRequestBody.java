@@ -1,5 +1,6 @@
-package com.cheaclo.userdatabase.model;
+package com.cheaclo.userdatabase.model.request;
 
+import com.cheaclo.userdatabase.model.Gender;
 import lombok.Data;
 
 import javax.validation.constraints.*;

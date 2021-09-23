@@ -3,7 +3,7 @@ package com.cheaclo.userdatabase.service;
 import com.cheaclo.userdatabase.entity.AccountInfo;
 import com.cheaclo.userdatabase.entity.Address;
 import com.cheaclo.userdatabase.entity.User;
-import com.cheaclo.userdatabase.model.AddUserRequestBody;
+import com.cheaclo.userdatabase.model.request.AddUserRequestBody;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;

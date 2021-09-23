@@ -3,7 +3,7 @@ package com.cheaclo.userdatabase.service;
 import com.cheaclo.userdatabase.entity.AccountInfo;
 import com.cheaclo.userdatabase.entity.Address;
 import com.cheaclo.userdatabase.entity.User;
-import com.cheaclo.userdatabase.model.EditUserRequestBody;
+import com.cheaclo.userdatabase.model.request.EditUserRequestBody;
 import com.cheaclo.userdatabase.repository.UserRepository;
 import com.cheaclo.userdatabase.service.response.EditUserResponse;
 import lombok.RequiredArgsConstructor;

@@ -2,7 +2,7 @@ package com.cheaclo.userdatabase.controller;
 
 
 import com.cheaclo.userdatabase.entity.User;
-import com.cheaclo.userdatabase.model.AddUserRequestBody;
+import com.cheaclo.userdatabase.model.request.AddUserRequestBody;
 import com.cheaclo.userdatabase.repository.UserRepository;
 import com.cheaclo.userdatabase.service.AddUserParser;
 import com.cheaclo.userdatabase.service.response.AddUserResponse;
