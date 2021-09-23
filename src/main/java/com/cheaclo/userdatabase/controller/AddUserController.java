@@ -5,11 +5,14 @@ import com.cheaclo.userdatabase.entity.User;
 import com.cheaclo.userdatabase.model.request.AddUserRequestBody;
 import com.cheaclo.userdatabase.repository.UserRepository;
 import com.cheaclo.userdatabase.service.AddUserParser;
-import com.cheaclo.userdatabase.service.response.AddUserResponse;
 import com.cheaclo.userdatabase.service.CountryValidator;
+import com.cheaclo.userdatabase.service.response.AddUserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
