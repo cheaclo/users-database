@@ -4,10 +4,8 @@ import com.cheaclo.userdatabase.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.jdbc.Sql;
 
 @DataJpaTest
-@Sql("/repository-import.sql")
 class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;

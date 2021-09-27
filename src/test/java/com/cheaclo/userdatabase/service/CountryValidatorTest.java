@@ -12,7 +12,7 @@ class CountryValidatorTest {
     private CountryValidator countryValidator;
 
     private final String correctCountryOne = "France";
-    private final String correctCountryTwo = "Ireland";
+    private final String correctCountryTwo = "Iran";
     private final String correctCountryThree = "Poland";
     private final String correctCountryFour = "China";
     private final String correctCountryFive = "Egypt";
