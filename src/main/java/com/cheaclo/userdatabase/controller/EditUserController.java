@@ -7,10 +7,7 @@ import com.cheaclo.userdatabase.service.response.EditUserResponse;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -20,62 +17,62 @@ import javax.validation.Valid;
 public class EditUserController {
     private final EditUserControllerHelper editUserControllerHelper;
     
-    @PostMapping("/firstname")
+    @PutMapping("/firstname")
     public ResponseEntity<EditUserResponse> editUserFirstname(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/lastname")
+    @PutMapping("/lastname")
     public ResponseEntity<EditUserResponse> editUserLastname(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/email")
+    @PutMapping("/email")
     public ResponseEntity<EditUserResponse> editUserEmail(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/password")
+    @PutMapping("/password")
     public ResponseEntity<EditUserResponse> editUserPassowrd(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/gender")
+    @PutMapping("/gender")
     public ResponseEntity<EditUserResponse> editUserGender(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/birthday")
+    @PutMapping("/birthday")
     public ResponseEntity<EditUserResponse> editUserBirthday(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/street")
+    @PutMapping("/street")
     public ResponseEntity<EditUserResponse> editUserStreet(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/street_number")
+    @PutMapping("/street_number")
     public ResponseEntity<EditUserResponse> editUserStreetName(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/city")
+    @PutMapping("/city")
     public ResponseEntity<EditUserResponse> editUserCity(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/postal_code")
+    @PutMapping("/postal_code")
     public ResponseEntity<EditUserResponse> editUserPostalCode(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/country")
+    @PutMapping("/country")
     public ResponseEntity<EditUserResponse> editUserCountry(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
 
-    @PostMapping("/phone")
+    @PutMapping("/phone")
     public ResponseEntity<EditUserResponse> editUserPhone(@Valid @RequestBody EditUserRequestBody request) {
         return editUserControllerHelper.editUserField(request);
     }
