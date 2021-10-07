@@ -12,6 +12,7 @@ public class SignInRequestBody {
     @Email
     private String email;
 
+    @NotNull
     @Size(min=5, max=30)
     private String password;
 }
