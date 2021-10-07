@@ -29,7 +29,7 @@ public class AddUserController {
     public ResponseEntity<AddUserResponse> addUser(@Valid @RequestBody AddUserRequestBody request) {
         if (!countryValidator.validateCountry(request.getCountry()))
             return ResponseEntity.badRequest().body(addUserResponse.invalidCountry());
-        User checkDuplicate = userRepository.findFirstByAccountInfo_Email(request.getEmail());
+        User checkDuplicate = userRepository.findFirstByAccountInfo_EmailIgnoreCase(request.getEmail());
         if (checkDuplicate != null)
             return ResponseEntity.badRequest().body(addUserResponse.duplicate());
 

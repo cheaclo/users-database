@@ -17,13 +17,13 @@ class UserRepositoryTest {
 
     @Test
     void findFirstByAccountInfo_Email() {
-        User firstUser = userRepository.findFirstByAccountInfo_Email(firstEmail);
+        User firstUser = userRepository.findFirstByAccountInfo_EmailIgnoreCase(firstEmail);
         assert(firstUser != null);
 
-        User notExistingUser = userRepository.findFirstByAccountInfo_Email("some@gmail.com");
+        User notExistingUser = userRepository.findFirstByAccountInfo_EmailIgnoreCase("some@gmail.com");
         assert(notExistingUser == null);
 
-        User secondUser = userRepository.findFirstByAccountInfo_Email(secondEmail);
+        User secondUser = userRepository.findFirstByAccountInfo_EmailIgnoreCase(secondEmail);
         assert(secondUser != null);
     }
 

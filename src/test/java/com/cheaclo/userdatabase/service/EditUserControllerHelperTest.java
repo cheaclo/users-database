@@ -41,7 +41,7 @@ class EditUserControllerHelperTest {
         ResponseEntity<EditUserResponse> responseEntity = editUserControllerHelper.editUserField(editUserRequestBody);
         assertEquals(statusOk, responseEntity.getStatusCodeValue());
 
-        User user = userRepository.findFirstByAccountInfo_Email(firstEmail);
+        User user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(firstEmail);
         assertEquals(newPhone, user.getAccountInfo().getPhone());
     }
 
@@ -53,7 +53,7 @@ class EditUserControllerHelperTest {
         ResponseEntity<EditUserResponse> responseEntity = editUserControllerHelper.editUserField(editUserRequestBody);
         assertEquals(statusOk, responseEntity.getStatusCodeValue());
 
-        User user = userRepository.findFirstByAccountInfo_Email(firstEmail);
+        User user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(firstEmail);
         assertEquals(newGender, user.getAccountInfo().getGender());
     }
 
@@ -65,7 +65,7 @@ class EditUserControllerHelperTest {
         ResponseEntity<EditUserResponse> responseEntity = editUserControllerHelper.editUserField(editUserRequestBody);
         assertEquals(statusBadRequest, responseEntity.getStatusCodeValue());
 
-        User user = userRepository.findFirstByAccountInfo_Email(firstEmail);
+        User user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(firstEmail);
         assertEquals(oldCountry, user.getAccountInfo().getAddress().getCountry());
 
         editUserRequestBody.setNewCountry(newCountry);
@@ -73,7 +73,7 @@ class EditUserControllerHelperTest {
         responseEntity = editUserControllerHelper.editUserField(editUserRequestBody);
         assertEquals(statusOk, responseEntity.getStatusCodeValue());
 
-        user = userRepository.findFirstByAccountInfo_Email(firstEmail);
+        user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(firstEmail);
         assertEquals(newCountry, user.getAccountInfo().getAddress().getCountry());
     }
 
@@ -87,7 +87,7 @@ class EditUserControllerHelperTest {
         ResponseEntity<EditUserResponse> responseEntity = editUserControllerHelper.editUserField(editUserRequestBody);
         assertEquals(statusOk, responseEntity.getStatusCodeValue());
 
-        User user = userRepository.findFirstByAccountInfo_Email(newEmail);
+        User user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(newEmail);
         assertEquals(newEmail, user.getAccountInfo().getEmail());
     }
 
