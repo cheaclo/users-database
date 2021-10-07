@@ -1,20 +1,25 @@
 package com.cheaclo.userdatabase.service.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EditUserResponse {
     @Value("${edit.user.response.success}")
+    @JsonIgnore
     private String successMessage;
 
     @Value("${edit.user.response.user.fail}")
+    @JsonIgnore
     private String userNotFoundMessage;
 
     @Value("${edit.user.response.country.fail}")
+    @JsonIgnore
     private String countryNotFoundMessage;
 
     @Value("${edit.user.response.json.fail}")
+    @JsonIgnore
     private String invalidJsonMessage;
 
     public boolean success;

@@ -26,6 +26,7 @@ public class SignInUserController {
         if (user == null || !user.getAccountInfo().getPassword().equals(request.getPassword()))
             return ResponseEntity.badRequest().body(signInUserResponse.incorrectEmailOrPassword());
 
+        signInUserResponse.setUser(user);
         return ResponseEntity.ok(signInUserResponse.success());
     }
 }
