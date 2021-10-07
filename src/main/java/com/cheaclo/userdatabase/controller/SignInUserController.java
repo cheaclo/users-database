@@ -21,7 +21,7 @@ public class SignInUserController {
     public ResponseEntity<SignInUserResponse> signIn(@Valid SignInRequestBody request) {
         User user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(request.getEmail());
         if (user == null || !user.getAccountInfo().getPassword().equals(request.getPassword()))
-            return ResponseEntity.badRequest().body(signInUserResponse.incorrectEmailOrPassword());
+            return ResponseEntity.ok(signInUserResponse.incorrectEmailOrPassword());
 
         signInUserResponse.setUser(user);
         return ResponseEntity.ok(signInUserResponse.success());
