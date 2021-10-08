@@ -17,8 +17,8 @@ public class SignInUserController {
     private UserRepository userRepository;
     private SignInUserResponse signInUserResponse;
 
-    @GetMapping("/sign-in")
-    public ResponseEntity<SignInUserResponse> signIn(@Valid SignInRequestBody request) {
+    @PostMapping("/sign-in")
+    public ResponseEntity<SignInUserResponse> signIn(@Valid @RequestBody SignInRequestBody request) {
         User user = userRepository.findFirstByAccountInfo_EmailIgnoreCase(request.getEmail());
         if (user == null || !user.getAccountInfo().getPassword().equals(request.getPassword()))
             return ResponseEntity.ok(signInUserResponse.incorrectEmailOrPassword());
