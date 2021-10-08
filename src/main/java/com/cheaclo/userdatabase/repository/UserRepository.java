@@ -7,5 +7,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findFirstByAccountInfo_EmailIgnoreCase(String email);
 
     User findFirstByIdAndAccountInfo_EmailIgnoreCase(Long id, String email);
+
+    User findFirstById(Long id);
 }
 

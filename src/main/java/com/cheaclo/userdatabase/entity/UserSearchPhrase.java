@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class LastFiveSearched {
+public class UserSearchPhrase {
     @Id
     @SequenceGenerator(
             name = "last_five_searched_seq",
