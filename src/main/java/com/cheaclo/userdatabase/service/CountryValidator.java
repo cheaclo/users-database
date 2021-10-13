@@ -19,10 +19,10 @@ public class CountryValidator {
 
     @PostConstruct
     public void postConstruct() {
-        countries = getCountries();
+        countries = initCountries();
     }
 
-    private List<String> getCountries() {
+    private List<String> initCountries() {
         List<String> countries = new LinkedList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(ResourceUtils.getFile(countryListPath)))) {
             String line;
@@ -38,5 +38,9 @@ public class CountryValidator {
         if (!countries.contains(country.toLowerCase()))
             return false;
         return true;
+    }
+
+    public List<String> getCountries() {
+        return countries;
     }
 }
