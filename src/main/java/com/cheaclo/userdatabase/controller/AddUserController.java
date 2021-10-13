@@ -27,14 +27,15 @@ public class AddUserController {
 
     @PostMapping("/add")
     public ResponseEntity<AddUserResponse> addUser(@Valid @RequestBody AddUserRequestBody request) {
-        if (!countryValidator.validateCountry(request.getCountry()))
-            return ResponseEntity.badRequest().body(addUserResponse.invalidCountry());
+        if (!request.getCountry().isEmpty() && !countryValidator.validateCountry(request.getCountry()))
+            return ResponseEntity.ok(addUserResponse.invalidCountry());
         User checkDuplicate = userRepository.findFirstByAccountInfo_EmailIgnoreCase(request.getEmail());
         if (checkDuplicate != null)
-            return ResponseEntity.badRequest().body(addUserResponse.duplicate());
+            return ResponseEntity.ok(addUserResponse.duplicate());
 
         User user = addUserParser.requestToEntity(request);
         userRepository.save(user);
+        addUserResponse.setUser(user);
 
         return ResponseEntity.ok(addUserResponse.success());
     }

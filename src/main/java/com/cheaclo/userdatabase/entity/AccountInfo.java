@@ -49,7 +49,7 @@ public class AccountInfo {
 
     private Gender gender;
 
-    @Pattern(regexp = "^\\d{9}$")
+    @Pattern(regexp = "^$|^\\d{9}$")
     private String phone;
 
     @OneToOne(cascade = CascadeType.ALL)
