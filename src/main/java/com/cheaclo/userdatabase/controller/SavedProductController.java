@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -48,5 +49,11 @@ public class SavedProductController {
         savedProductResponse.setSavedProducts(savedProducts);
 
         return ResponseEntity.ok(savedProductResponse.success());
+    }
+
+    @Transactional
+    @DeleteMapping("/delete/id")
+    public void deleteProductById(@RequestParam Long id) {
+        savedProductRepository.deleteByProduct(id);
     }
 }
