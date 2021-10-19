@@ -1,10 +1,12 @@
 package com.cheaclo.userdatabase.service.response;
 
-import com.cheaclo.userdatabase.entity.User;
+import com.cheaclo.userdatabase.entity.SavedProduct;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @Data
@@ -24,6 +26,7 @@ public class SavedProductResponse {
 
     public boolean success;
     public String message;
+    public List<Long> savedProducts;
 
     public SavedProductResponse success() {
         success = true;
