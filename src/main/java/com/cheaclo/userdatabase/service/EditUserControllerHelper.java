@@ -27,38 +27,36 @@ public class EditUserControllerHelper {
 
         if (request.getNewFirstname() != null)
             accountInfo.setFirstname(request.getNewFirstname());
-        else if (request.getNewLastname() != null)
+        if (request.getNewLastname() != null)
             accountInfo.setLastname(request.getNewLastname());
-        else if (request.getNewEmail() != null)
+        if (request.getNewEmail() != null)
             accountInfo.setEmail(request.getNewEmail());
-        else if (request.getNewPassword() != null)
+        if (request.getNewPassword() != null)
             accountInfo.setPassword(request.getNewPassword());
-        else if (request.getNewGender() != null)
+        if (request.getNewGender() != null)
             accountInfo.setGender(request.getNewGender());
-        else if (request.getNewBirthday() != null)
+        if (request.getNewBirthday() != null)
             accountInfo.setBirthdayDate(request.getNewBirthday());
-        else if (request.getNewPhone() != null)
+        if (request.getNewPhone() != null)
             accountInfo.setPhone(request.getNewPhone());
-        else if (request.getNewStreet() != null)
+        if (request.getNewStreet() != null)
             address.setStreet(request.getNewStreet());
-        else if (request.getNewStreetNumber() != null)
+        if (request.getNewStreetNumber() != null)
             address.setStreetNumber(request.getNewStreetNumber());
-        else if (request.getNewCity() != null)
+        if (request.getNewCity() != null)
             address.setCity(request.getNewCity());
-        else if (request.getNewPostalCode() != null)
+        if (request.getNewPostalCode() != null)
             address.setPostalCode(request.getNewPostalCode());
-        else if (request.getNewCountry() != null) {
+        if (request.getNewCountry() != null) {
             if (!countryValidator.validateCountry(request.getNewCountry()))
                 return ResponseEntity.badRequest().body(editUserResponse.countryNotFound());
             address.setCountry(request.getNewCountry());
-        }
-        else {
-            return ResponseEntity.badRequest().body(editUserResponse.invalidJson());
         }
 
         accountInfo.setAddress(address);
         user.setAccountInfo(accountInfo);
         userRepository.save(user);
+        editUserResponse.setUser(user);
 
         return ResponseEntity.ok(editUserResponse.success());
     }
