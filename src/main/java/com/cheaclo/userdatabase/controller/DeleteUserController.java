@@ -7,10 +7,7 @@ import com.cheaclo.userdatabase.repository.UserRepository;
 import com.cheaclo.userdatabase.service.response.DeleteUserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -21,9 +18,9 @@ public class DeleteUserController {
     private final UserRepository userRepository;
     private final DeleteUserResponse deleteUserResponse;
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<DeleteUserResponse> deleteUser(@Valid @RequestBody DeleteUserRequestBody request) {
-        User user = userRepository.findFirstByIdAndAccountInfo_EmailIgnoreCase(request.getUserId(), request.getEmail());
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<DeleteUserResponse> deleteUser(@PathVariable("id") Long id) {
+        User user = userRepository.findFirstById(id);
         if (user == null)
             return ResponseEntity.badRequest().body(deleteUserResponse.userNotFound());
 
