@@ -15,10 +15,10 @@ public class EditUserRequestBody {
     @Email
     private String email;
 
-    @Size(min=5, max=30)
+    @Size(min=2, max=30)
     private String newFirstname;
 
-    @Size(min=5, max=30)
+    @Size(min=2, max=30)
     private String newLastname;
 
     @Email
