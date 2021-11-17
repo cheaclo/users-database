@@ -1,6 +1,5 @@
 package com.cheaclo.userdatabase.service.response;
 
-import com.cheaclo.userdatabase.entity.SavedProduct;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,37 +9,37 @@ import java.util.List;
 
 @Component
 @Data
-public class SavedProductResponse {
-    @Value("${saved.product.response.success}")
+public class FavouriteProductResponse {
+    @Value("${favourite.product.response.success}")
     @JsonIgnore
     private String successMessage;
 
-    @Value("${saved.product.response.user.fail}")
+    @Value("${favourite.product.response.user.fail}")
     @JsonIgnore
     private String userNotFoundMessage;
 
-    @Value("${saved.product.response.exist.fail}")
+    @Value("${favourite.product.response.exist.fail}")
     @JsonIgnore
     private String productSavedMessage;
 
 
     public boolean success;
     public String message;
-    public List<Long> savedProducts;
+    public List<Long> favouriteProducts;
 
-    public SavedProductResponse success() {
+    public FavouriteProductResponse success() {
         success = true;
         message = successMessage;
         return this;
     }
 
-    public SavedProductResponse userNotFound() {
+    public FavouriteProductResponse userNotFound() {
         success = false;
         message = userNotFoundMessage;
         return this;
     }
 
-    public SavedProductResponse productSaved() {
+    public FavouriteProductResponse productSaved() {
         success = false;
         message = productSavedMessage;
         return this;

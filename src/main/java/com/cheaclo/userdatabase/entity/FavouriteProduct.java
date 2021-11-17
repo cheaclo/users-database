@@ -10,16 +10,16 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class SavedProduct {
+public class FavouriteProduct {
     @Id
     @SequenceGenerator(
-            name = "saved_product_seq",
-            sequenceName = "saved_product_seq",
+            name = "favourite_product_seq",
+            sequenceName = "favourite_product_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "saved_product_seq"
+            generator = "favourite_product_seq"
     )
     private Long id;
     @ManyToOne

@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class SavedProductRequestBody {
+public class FavouriteProductRequestBody {
     @NotNull
     private Long userId;
 
