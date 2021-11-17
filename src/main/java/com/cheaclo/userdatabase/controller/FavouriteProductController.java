@@ -53,7 +53,7 @@ public class FavouriteProductController {
 
     @Transactional
     @DeleteMapping("/delete/id")
-    public void deleteProductById(@RequestParam Long id) {
-        favouriteProductRepository.deleteByProduct(id);
+    public void deleteProductById(@RequestParam Long productId, @RequestParam Long userId) {
+        favouriteProductRepository.deleteByProductAndUserId(productId, userId);
     }
 }
