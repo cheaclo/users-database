@@ -56,4 +56,13 @@ public class FavouriteProductController {
     public void deleteProductById(@RequestParam Long productId, @RequestParam Long userId) {
         favouriteProductRepository.deleteByProductAndUserId(productId, userId);
     }
+
+    @GetMapping("/find")
+    public ResponseEntity<FavouriteProductResponse> findProduct(@RequestParam Long productId, @RequestParam Long userId) {
+        FavouriteProduct favouriteProduct = favouriteProductRepository.findFirstByProductAndUserId(productId, userId);
+        if (favouriteProduct != null)
+            return ResponseEntity.ok(favouriteProductResponse.success());
+        else
+            return ResponseEntity.ok(favouriteProductResponse.productNotFound());
+    }
 }

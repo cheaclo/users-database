@@ -22,6 +22,9 @@ public class FavouriteProductResponse {
     @JsonIgnore
     private String productSavedMessage;
 
+    @Value("${favourite.product.response.found.fail}")
+    @JsonIgnore
+    private String productNotFoundMessage;
 
     public boolean success;
     public String message;
@@ -42,6 +45,12 @@ public class FavouriteProductResponse {
     public FavouriteProductResponse productSaved() {
         success = false;
         message = productSavedMessage;
+        return this;
+    }
+
+    public FavouriteProductResponse productNotFound() {
+        success = false;
+        message = productNotFoundMessage;
         return this;
     }
 }

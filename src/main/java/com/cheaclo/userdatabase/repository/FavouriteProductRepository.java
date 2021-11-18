@@ -16,5 +16,7 @@ public interface FavouriteProductRepository extends JpaRepository<FavouriteProdu
 
     @Modifying
     void deleteByProductAndUserId(Long product, Long userId);
+
+    FavouriteProduct findFirstByProductAndUserId(Long product, Long userId);
 }
 
