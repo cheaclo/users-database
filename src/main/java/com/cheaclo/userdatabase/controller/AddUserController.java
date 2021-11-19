@@ -34,8 +34,8 @@ public class AddUserController {
             return ResponseEntity.ok(addUserResponse.duplicate());
 
         User user = addUserParser.requestToEntity(request);
-        userRepository.save(user);
-        addUserResponse.setUser(user);
+        User savedUser = userRepository.save(user);
+        addUserResponse.setUser(savedUser);
 
         return ResponseEntity.ok(addUserResponse.success());
     }
