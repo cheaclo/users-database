@@ -34,7 +34,7 @@ class EditUserControllerHelperTest {
     private final String newEmail = "new@gmail.com";
 
     @Test
-    void editUserPhone() {
+    void editUserPhoneTest() {
         EditUserRequestBody editUserRequestBody = initEditUserRequestBody();
         editUserRequestBody.setNewPhone(newPhone);
 
@@ -46,7 +46,7 @@ class EditUserControllerHelperTest {
     }
 
     @Test
-    void editUserGender() {
+    void editUserGenderTest() {
         EditUserRequestBody editUserRequestBody = initEditUserRequestBody();
         editUserRequestBody.setNewGender(Gender.OTHER);
 
@@ -58,7 +58,7 @@ class EditUserControllerHelperTest {
     }
 
     @Test
-    void editUserCountry() {
+    void editUserCountryTest() {
         EditUserRequestBody editUserRequestBody = initEditUserRequestBody();
         editUserRequestBody.setNewCountry(invalidCountry);
 
@@ -78,7 +78,7 @@ class EditUserControllerHelperTest {
     }
 
     @Test
-    public void editUserMail() {
+    public void editUserMailTest() {
         EditUserRequestBody editUserRequestBody = new EditUserRequestBody();
         editUserRequestBody.setUserId(secondId);
         editUserRequestBody.setEmail(secondEmail);

@@ -25,25 +25,25 @@ class EditUserResponseTest {
     private EditUserResponse editUserResponse;
 
     @Test
-    void success() {
+    void successTest() {
         String message = editUserResponse.success().message;
         assertEquals(successMessage, message);
     }
 
     @Test
-    void userNotFound() {
+    void userNotFoundTest() {
         String message = editUserResponse.userNotFound().message;
         assertEquals(userNotFoundMessage, message);
     }
 
     @Test
-    void countryNotFound() {
+    void countryNotFoundTest() {
         String message = editUserResponse.countryNotFound().message;
         assertEquals(countryNotFoundMessage, message);
     }
 
     @Test
-    void invalidJson() {
+    void invalidJsonTest() {
         String message = editUserResponse.invalidJson().message;
         assertEquals(invalidJsonMessage, message);
     }

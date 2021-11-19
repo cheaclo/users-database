@@ -16,7 +16,7 @@ class UserRepositoryTest {
     private final Long secondId = 2L;
 
     @Test
-    void findFirstByAccountInfo_Email() {
+    void findFirstByAccountInfo_EmailTest() {
         User firstUser = userRepository.findFirstByAccountInfo_EmailIgnoreCase(firstEmail);
         assert(firstUser != null);
 
@@ -28,7 +28,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void findFirstByIdAndAccountInfo_EmailIgnoreCase() {
+    void findFirstByIdAndAccountInfo_EmailIgnoreCaseTest() {
         User firstUser = userRepository.findFirstByIdAndAccountInfo_EmailIgnoreCase(firstId, firstEmail.toUpperCase());
         assert(firstUser != null);
 

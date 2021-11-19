@@ -19,13 +19,13 @@ class DeleteUserResponseTest {
     private DeleteUserResponse deleteUserResponse;
 
     @Test
-    void success() {
+    void Test() {
         String message = deleteUserResponse.success().message;
         assertEquals(successMessage, message);
     }
 
     @Test
-    void userNotFound() {
+    void userNotFoundTest() {
         String message = deleteUserResponse.userNotFound().message;
         assertEquals(userNotFoundMessage, message);
     }
