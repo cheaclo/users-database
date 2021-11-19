@@ -22,19 +22,19 @@ class AddUserResponseTest {
     private AddUserResponse addUserResponse;
 
     @Test
-    void invalidCountry() {
+    void invalidCountryTest() {
         String message = addUserResponse.invalidCountry().message;
         assertEquals(invalidCountryMessage, message);
     }
 
     @Test
-    void success() {
+    void successTest() {
         String message = addUserResponse.success().message;
         assertEquals(successMessage, message);
     }
 
     @Test
-    void duplicate() {
+    void duplicateTest() {
         String message = addUserResponse.duplicate().message;
         assertEquals(duplicateMessage, message);
     }
