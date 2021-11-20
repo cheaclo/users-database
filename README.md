@@ -1,4 +1,4 @@
-# Clothes Database Microservice
+# Users Database Microservice
 
 Project is a microservice, which is part of Cheaclo project. The application is a layer supporting communication between users database and other microservices.
 
